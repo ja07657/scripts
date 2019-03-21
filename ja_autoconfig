@@ -1,0 +1,4 @@
+racadm get idrac.nic.autoconfig
+racadm set idrac.nic.autoconfig "enable once after reset"
+racadm racreset
+racadm set iDRAC.IPv4.DHCPEnable 1

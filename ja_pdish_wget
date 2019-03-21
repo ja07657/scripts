@@ -1,0 +1,20 @@
+curl "https:///redfish/v1/" -k | python -m json.tool
+curl "https:///redfish/v1/Chassis" -k -u root:calvin
+#
+USING pdsh with redfish to power off multiple servers:
+pdsh -R exec -w 192.168.1.120 wget --header='OData-Version:4.0' --header='Content-Type:application/json' --no-check-certificate --auth-no-challenge --http-user=root --http-password=ca
+lvin --no-check-certificate --post-data='{"Action":"Reset","ResetType":"PushPowerButton"}' https://%h/redfish/v1/Systems/System.Embedded.1/Actions/ComputerSystem.Reset
+
+Using host list file called servers:
+pdsh -R exec -w ^servers  wget --header='OData-Version:4.0' --header='Content-Type:application/json' --no-check-certificate --auth-no-challenge --http-user=root --htt
+p-password=calvin --no-check-certificate --post-data='{"Action":"Reset","ResetType":"ForceOff"}' https://%h/redfish/v1/Systems/System.Embedded.1/Actions/ComputerSystem.Reset
+
+...with host file and password file:
+create a file ~/.wgetrc
+contents are:
+http_user=blabla
+http_password=pdojoj
+
+dsh -R exec -w ^servers  wget --header='OData-Version:4.0' --header='Content-Type:application/json' --no-check-certificate --auth-no-challenge --no-check-certificate
+--post-data='{"Action":"Reset","ResetType":"ForceOff"}' https://%h/redfish/v1/Systems/System.Embedded.1/Actions/ComputerSystem.Reset 
+
