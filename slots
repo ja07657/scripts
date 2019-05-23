@@ -1,0 +1,8 @@
+r640
+Integrated RAID pci-0000:18:00.0-scsi-0:2:0:0
+slot1 - BOSS - pci-0000:3b-00.0-ata-1.0
+
+r940
+slot1 - BOSS - pci-0000:18:00.0-ata-1.0
+slot6 - pci-0000:6e:00.0-scsi-0:2:0:0-part1 RAID
+
