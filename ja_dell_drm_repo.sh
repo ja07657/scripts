@@ -29,6 +29,7 @@ check_job () {
 #wget -O /tmp/Catalog.xml.gz http://ftp.dell.com/catalog/Catalog.xml.gz
 #gunzip /tmp/Catalog.xml.gz
 #drm --create --repository=${r} --inputplatformlist=${r} --dupformat="Windows-64" --source=/tmp/Catalog.xml
+# drm --create --repository=r640r740 --inputplatformlist="R640,R740" --dupformat="Windows-64" --source=/data/drm/Catalog.xml
 #0000
 #update main catalog-----------------
 drm --update --catalog=ALL |grep 'Updates not available'
