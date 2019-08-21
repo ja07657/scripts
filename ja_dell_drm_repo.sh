@@ -1,8 +1,8 @@
 #!/bin/sh
 #jason amato 2019
 ###########
-#drm -li=rep
-repos="r420 14G_linux 14G_windows 13G_linux 13G_windows"
+repos=`drm -li=rep |egrep -v 'Listing|Name|----' |awk '{print $1}'`
+#repos="r420 14G_linux 14G_windows 13G_linux 13G_windows"
 ###########
 #-functions-----------------------------------------
 check_job () {
